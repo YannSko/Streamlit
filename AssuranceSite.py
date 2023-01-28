@@ -112,3 +112,8 @@ def filedownload(df):
     return href
 
 st.markdown(filedownload(df_select), unsafe_allow_html=True)
+
+df = pd.DataFrame(df_select, columns = ["bmi"])
+df.hist()
+plt.show()
+st.pyplot()
