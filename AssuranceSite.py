@@ -113,7 +113,7 @@ def filedownload(df):
 
 st.markdown(filedownload(df_select), unsafe_allow_html=True)
 
-df = pd.DataFrame(df_select, columns = ["bmi"])
-df.hist()
-plt.show()
-st.pyplot()
+x_axis = st.selectbox("Select which factor do you want to compare ( for the index)", options=df_select.columns)
+y_axis = st.selectbox("Select which factor do you want to compare ( for the axis)", options=df_select.columns)
+
+st.bar_chart(df_select, x=x_axis, y=y_axis)
