@@ -88,6 +88,7 @@ What are the factors modifying the insurance costs? How do they impact?
 Total_Charges = int(df_select["charges"].sum())
 Average_Charges = round(df_select["charges"].mean(),1)
 
+
 LeftCol, MidCol, RightCol = st.columns(3)
 
 with LeftCol:
@@ -114,6 +115,8 @@ def filedownload(df):
 st.markdown(filedownload(df_select), unsafe_allow_html=True)
 
 x_axis = st.selectbox("Select which factor do you want to compare ( for the index)", options=df_select.columns)
-y_axis = st.selectbox("Select which factor do you want to compare ( for the axis)", options=df_select.columns)
+pre_y_axis = st.selectbox("Select which factor do you want to compare ( for the axis)", options=df_select.columns)
 
-st.bar_chart(df_select, x=x_axis, y=y_axis)
+
+
+bar = st.bar_chart(df_select, x=x_axis, y=y_axis)
